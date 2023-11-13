@@ -89,7 +89,7 @@ int len(char *str)
  */
 int print_num(int num)
 {
-	int i = 0, j = 0, tmp_num, count = 0;
+	int i = 0, j = 0, tmp_num, count = 0, flag_min = 0;
 	char *str_num, *tmp_str_num;
 
 	if (num == 0)
@@ -97,10 +97,17 @@ int print_num(int num)
 		_putchar('0'), count++;
 		return (count);
 	}
-	if (num < 0)
+	if (num < 0 && num != INT_MIN)
 	{
 		_putchar('-'), count++;
 		num = 0 - num;
+	}
+	if (num == INT_MIN)
+	{
+		_putchar('-'), count++;
+		num += 1;
+		num = 0 - num;
+		flag_min = 1;
 	}
 	tmp_num = num;
 	while (tmp_num > 0)
@@ -122,7 +129,12 @@ int print_num(int num)
 	while (*tmp_str_num++)
 		j++;
 	for (i = 0; i < j; i++)
-		_putchar(str_num[i]), count++;
+	{
+		if (flag_min == 1 && i == j - 1)
+			_putchar(str_num[i] + 1), count++;
+		else
+			_putchar(str_num[i]), count++;
+	}
 
 	return (count);
 
