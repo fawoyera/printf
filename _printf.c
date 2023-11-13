@@ -92,6 +92,11 @@ int print_num(int num)
 	int i = 0, j = 0, tmp_num, count = 0;
 	char *str_num, *tmp_str_num;
 
+	if (num == 0)
+	{
+		_putchar('0'), count++;
+		return (count);
+	}
 	if (num < 0)
 	{
 		_putchar('-'), count++;
