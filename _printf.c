@@ -535,7 +535,7 @@ int _printf(const char *format, ...)
 		min_width_size = 0, t = 0, p = 0, str_len = 0;
 		i++;
 	}
-	_putchar(-1);
+	/*_putchar(-1);*/
 	va_end(ap);
 	if (percent_space == 1)
 		return (-1);
