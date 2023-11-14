@@ -20,5 +20,5 @@ void _putchar(char c)
 		buf[buf_count] = c;
 		buf_count++;
 	}
-	write printf
+	writes printf
 }
