@@ -28,9 +28,8 @@ int _printf(const char *format, ...)
 	int percent_space = 0, flag_ell = 0, flag_h = 0, flag_width = 0, flag_neg = 0;
 	int m, n, m0, m1, flag_precision = 0, min_precision = 0, flag_star_p = 0, q;
 	int zpad = 0, x = 0, y = 0, z = 0, p = 0, pre = 0, flag_zero = 0, str_len = 0;
-	char *string, *temp_string, *width, *precision; /*flags;*/
+	char *string, *temp_string, *width, *precision;
 
-	/*flags = "+ #lh0123456789.-";*/
 	if (format == NULL)
 		return (-1);
 	va_start(ap, format);
@@ -537,7 +536,7 @@ int _printf(const char *format, ...)
 		min_width_size = 0, t = 0, p = 0, str_len = 0;
 		i++;
 	}
-	/*_putchar(-1);*/
+	_putchar(-1);
 	va_end(ap);
 	if (percent_space == 1)
 		return (-1);
