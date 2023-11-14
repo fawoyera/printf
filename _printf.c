@@ -502,9 +502,11 @@ int _printf(const char *format, ...)
 			}
 			while (*string)
 			{
-				if ((*string >= 'a' && *string <= 'm') || (*string >= 'A' && *string <= 'M'))
+				if ((*string >= 'a' && *string <= 'm') || (*string >= 'A'
+							&& *string <= 'M'))
 					_putchar((*string++) + 13), count++;
-				else if ((*string >= 'n' && *string <= 'z') || (*string >= 'N' && *string <= 'Z'))
+				else if ((*string >= 'n' && *string <= 'z') || (*string >= 'N'
+							&& *string <= 'Z'))
 					_putchar((*string++) - 13), count++;
 				else
 					_putchar(*string++), count++;
